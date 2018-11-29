@@ -1,0 +1,71 @@
+# Exemplo de arquivo netlist para o IVO, leitor do MARA:
+
+# Este arquivo declara netlist de um oscilador simples com um indutor, um capacitor e um resistor
+
++ Circuito Exemplo
+
+Capacitor ideal C1 2mF CI=0 entre n1 0
+Resistor ideal R2 2Ω entre n1 n2
+Indutor ideal L1 12,665H CI=1 entre n2 0
+
++ Análise Transiente 12s 1ms
+C1 ddp
+
+######################################################################
+#
+# Caracteres 'em branco' são definidos pelo padrão C++ std::isspace()
+#
+######################################################################
+#
+# Como o arquivo é interpretado:
+#
+# Todo o texto após o símbolo '#' e incluindo o símbolo em si, em cada linha, é descartado.
+# Após isso, linhas são classificadas em uma das cinco categorias abaixo:
+#
+# 1 Linhas em branco são ignoradas.
+#
+# 2 Linhas cujo primeiro caractere não em branco é '+' são início de nova seção da netlist, que pode ser:
+#	 2.a Circuito
+#	 2.b Análise
+#
+# 3 Linhas cujo primeiro caractere não em branco é '.' declaram comandos. Comandos implementados são:
+#	.gnuplot : sinaliza que deve ser gerada saída gráfica através do gnuplot
+#	.usa vírgula : indica que vírgula deve ser usado como separador decimal
+#	.usa ponto : indica que ponto deve ser usado como separador decimal
+#
+# 4 Não cumprindo os critérios anteriores, a primeira palavra pode ser:
+# 4.a Dentro de Circuito:
+#	termo que declara componente
+# 4.b Dentro de Análise:
+#	termo que declara novo objetivo
+#
+# 5 Erro. Se alguma linha não cumprir nenhum dos 4 critérios anteriores, a leitura falha.
+#
+# A ordem de propriedades para declaração de componente é:
+# [Tipo] [modelo] [nome] {parâmetros...} "conectado em" {nodos...}
+#	[Tipo]
+#	[modelo]
+#	e [nome] são uma palavra apenas.
+#	{parâmetros...} é uma sequência de números ou condições iniciais
+#		Números são interpretados em notação científica ou com ponto decimal
+#	"conectado em" deve ser exatamente essa sequência de caracteres, sinalizando que terminou a declaração de parâmetros
+#	{nodos...} é uma sequência de nomes referenciando a nodos
+#
+# números:
+# ponto decimal com caractere '.' ou ','
+# siglas de multiplicadores do SI implementados :
+# n     , 1e-9
+# μ ou u, 1e-6
+# m     , 1e-3
+# k     , 1e+3
+# M     , 1e+6
+# G     , 1e+9
+# o símbolo multiplicador do SI é de um caractere só.
+# deve estar imediatemente, isto é, sem espaços em branco, depois do número:
+# 2.2k
+# caracteres após a abreviatura do multiplicador são desconsiderados até o próximo espaço em branco
+# 2.2kOhm é válido, por exemplo, mas a unidade 'Ohm' é descartada, e server apenas de guia a possível leitor
+# (o simulador infere a representatividade correta pelo contexto)
+#
+##############################################################
+
