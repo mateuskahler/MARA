@@ -1,7 +1,7 @@
 /**
 	UFRGS - Engenharia Elétrica
 	 * 
-	 * Este arquivo gera matriz de ordem arbitrária para testas o algorítmo de pivoteamento direto
+	 * Este arquivo gera matriz de ordem arbitrária para testar o algorítmo de pivoteamento direto
 	 * 
 	Mateus Kahler
 */
