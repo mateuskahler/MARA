@@ -26,7 +26,7 @@ void teste_autoCI_Capacitor()
 		Esquema.Adiciona(R2, "n2", "0");
 		Esquema.Adiciona(C1, "n1", "n2");
 		
-	//monta análise e objetivos desta	
+	//monta análise e objetivos desta
 		Condicionamento::Analise_Quiescente analise_Q1;
 		analise_Q1.Adiciona_Objetivo("C1", "u");
 		
