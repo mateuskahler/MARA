@@ -11,8 +11,7 @@
 namespace Tratamento
 {
 	//estas constantes guardam o caminho para execução do GNUplot conforme organizado no repositório
-	constexpr char GNU_PLOT_COMANDO_MESMA_PASTA[]   = ".\\gnuplot\\bin\\gnuplot";
-	constexpr char GNU_PLOT_COMANDO_RELATIVO_REPO[] = "..\\bin\\gnuplot\\bin\\gnuplot";
+	constexpr char GNU_PLOT_COMANDO_RELATIVO_REPO[] = "..\\gnuplot\\bin\\gnuplot";
 	struct Configura_Grafico_t
 	{
 		ind2_t tamanho_pixels;

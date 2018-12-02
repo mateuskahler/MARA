@@ -1,7 +1,7 @@
 #include <LeitorNetlist_IVO/Ivo.hpp>
 #include <Tratamento/Impressor.hpp>
 
-int main(int argc, char **argv)
+int main(int , char **)
 {
 	auto estoque = Estoque::Estoque_t::Estoque_Pre_Compilado();
 	auto netlist = IVONetList::AbrirArquivoNetList("IvoREF.txt", estoque);
