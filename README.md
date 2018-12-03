@@ -1,6 +1,5 @@
 # MARA
-MARA é um simulador elétrico desenvolvido como projeto de conclusão de curso de Engenharia Elétrica na Universidade Federal do Rio Grande do Sul.
+MARA é um conjunto de módulos, base para construção de simuladores de circuitos elétricos, desenvolvidos como projeto de conclusão de curso de Engenharia Elétrica na Universidade Federal do Rio Grande do Sul.
 
-O código pode ser compilado com o g++ incluindo a pasta `src` no diretório de busca.
+A pasta `src` contém o código fonte destes e a pasta de `Teste` contém os exemplos mencionados na documentação.
 
-A pasta de Teste contém os exemplos mencionados na documentação.
